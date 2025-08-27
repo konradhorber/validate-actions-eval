@@ -152,19 +152,19 @@ Full API documentation is available at: **https://konradhorber.github.io/validat
 
 ## 🛠️ Development
 
-See [DEV_README.md](DEV_README.md) for detailed development setup, architecture overview, and contribution guidelines.
+See [DEV_README.md](https://github.com/konradhorber/validate-actions/blob/main/DEV_README.md) for detailed development setup, architecture overview, and contribution guidelines.
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [DEV_README.md](DEV_README.md) for development setup and guidelines.
+We welcome contributions! Please see [DEV_README.md](https://github.com/konradhorber/validate-actions/blob/main/DEV_README.md) for development setup and guidelines.
 
 ---
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](https://github.com/konradhorber/validate-actions/blob/main/LICENSE) file for details.
 
 ---
 
