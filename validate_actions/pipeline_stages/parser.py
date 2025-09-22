@@ -109,22 +109,29 @@ class PyYAMLParser(YAMLParser):
         content: Dict[String, Any] = {}
         error_desc = "Error parsing top-level workflow structure"
         i = 0
-        while i < len(tokens):
-            token = tokens[i]
-            if isinstance(token, yaml.StreamStartToken):
-                pass
-            elif isinstance(token, yaml.StreamEndToken):
-                return content
-            elif isinstance(token, yaml.BlockMappingStartToken):
-                content, i = self.__parse_block_mapping(tokens, i)
-            elif isinstance(token, yaml.BlockEntryToken):
-                pass
-            else:
-                self.problems.append(
-                    Problem(pos=Pos(0, 0), desc=error_desc, level=ProblemLevel.ERR, rule=self.RULE)
-                )
+        try:
+            while i < len(tokens):
+                token = tokens[i]
+                if isinstance(token, yaml.StreamStartToken):
+                    pass
+                elif isinstance(token, yaml.StreamEndToken):
+                    return content
+                elif isinstance(token, yaml.BlockMappingStartToken):
+                    content, i = self.__parse_block_mapping(tokens, i)
+                elif isinstance(token, yaml.BlockEntryToken):
+                    pass
+                else:
+                    self.problems.append(
+                        Problem(
+                            pos=Pos(0, 0),
+                            desc=error_desc,
+                            level=ProblemLevel.ERR,
+                            rule=self.RULE)
+                    )
 
-            i += 1
+                i += 1
+        except (Exception) as e:
+            error_desc = f"Error parsing workflow structure: {str(e)}"
 
         # If we reach here, it means there's an unexpected error in the
         # workflow structure
