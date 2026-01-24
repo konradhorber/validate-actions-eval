@@ -280,6 +280,15 @@ class PyYAMLParser(YAMLParser):
         elif isinstance(token, yaml.FlowMappingStartToken):
             value, index = self.__parse_flow_mapping(tokens, index)
 
+        elif isinstance(token, yaml.KeyToken):
+            self.problems.append(
+                Problem(
+                    pos=self.__parse_pos(token),
+                    desc="Errorneous block value",
+                    level=ProblemLevel.ERR,
+                    rule=self.RULE,
+                )
+            )
         # else assume empty block mapping
         else:
             value = {}
