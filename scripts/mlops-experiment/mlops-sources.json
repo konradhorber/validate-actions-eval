@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "description": "MLOps example/template workflows for validate-actions evaluation",
+    "collection_date": "2026-03-21",
+    "methodology": "See METHODOLOGY.md for selection criteria",
+    "total_repos": 18,
+    "categories": {
+      "A": "Cloud Provider MLOps Templates",
+      "B": "ML Framework Official Examples",
+      "C": "Data/Model Quality Tools",
+      "D": "Community MLOps Templates",
+      "E": "LLMOps Tools and Examples"
+    }
+  },
+  "repositories": [
+    {
+      "owner": "aws-samples",
+      "repo": "mlops-sagemaker-github-actions",
+      "category": "A",
+      "category_name": "Cloud Provider MLOps Templates",
+      "description": "MLOps example using Amazon SageMaker Pipeline and GitHub Actions",
+      "workflow_path": "seedcode/.github/workflows",
+      "workflows": ["build.yml", "deploy.yml"],
+      "stars": 88,
+      "url": "https://github.com/aws-samples/mlops-sagemaker-github-actions"
+    },
+    {
+      "owner": "Azure",
+      "repo": "mlops-v2-gha-demo",
+      "category": "A",
+      "category_name": "Cloud Provider MLOps Templates",
+      "description": "Azure MLOps v2 GitHub Actions Demo - classical ML pattern",
+      "workflow_path": ".github/workflows",
+      "workflows": ["deploy-batch-endpoint-pipeline-classical.yml", "deploy-model-training-pipeline-classical.yml", "deploy-online-endpoint-pipeline-classical.yml", "tf-gha-deploy-infra.yml"],
+      "stars": null,
+      "url": "https://github.com/Azure/mlops-v2-gha-demo"
+    },
+    {
+      "owner": "iterative",
+      "repo": "cml",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "CML - Continuous Machine Learning CI/CD for ML",
+      "workflow_path": ".github/workflows",
+      "workflows": ["codeql-analysis.yml", "gitlab.yml", "images.yml", "release.yml", "test-deploy.yml", "trigger-external.yml"],
+      "stars": null,
+      "url": "https://github.com/iterative/cml"
+    },
+    {
+      "owner": "iterative",
+      "repo": "cml-runner-base-case",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "Sample CML project - provisions EC2 for ML training",
+      "workflow_path": ".github/workflows",
+      "workflows": ["cml.yaml"],
+      "stars": null,
+      "url": "https://github.com/iterative/cml-runner-base-case"
+    },
+    {
+      "owner": "iterative",
+      "repo": "cml_cloud_case",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "CML with Terraform - neural style transfer on EC2",
+      "workflow_path": ".github/workflows",
+      "workflows": ["cml.yaml"],
+      "stars": null,
+      "url": "https://github.com/iterative/cml_cloud_case"
+    },
+    {
+      "owner": "iterative",
+      "repo": "setup-cml",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "GitHub Action for CML setup",
+      "workflow_path": ".github/workflows",
+      "workflows": ["check.yml"],
+      "stars": null,
+      "url": "https://github.com/iterative/setup-cml"
+    },
+    {
+      "owner": "zenml-io",
+      "repo": "zenml-gitflow",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "ZenML with Git workflows - ML pipeline orchestration",
+      "workflow_path": ".github/workflows",
+      "workflows": ["pipeline_run.yaml"],
+      "stars": null,
+      "url": "https://github.com/zenml-io/zenml-gitflow"
+    },
+    {
+      "owner": "Paulescu",
+      "repo": "zenml-example",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "ZenML MLOps template with staging/production deployments",
+      "workflow_path": ".github/workflows",
+      "workflows": ["production.yaml", "staging.yaml"],
+      "stars": null,
+      "url": "https://github.com/Paulescu/zenml-example"
+    },
+    {
+      "owner": "great-expectations",
+      "repo": "great_expectations_action",
+      "category": "C",
+      "category_name": "Data/Model Quality Tools",
+      "description": "GitHub Action for Great Expectations data validation",
+      "workflow_path": ".github/workflows",
+      "workflows": ["ge-pr-comment-demo.yaml", "ge-pr-push-demo.yaml", "ge.yaml"],
+      "stars": null,
+      "url": "https://github.com/great-expectations/great_expectations_action"
+    },
+    {
+      "owner": "evidentlyai",
+      "repo": "evidently-ci-example",
+      "category": "C",
+      "category_name": "Data/Model Quality Tools",
+      "description": "Evidently AI CI/CD example - LLM and data quality testing",
+      "workflow_path": ".github/workflows",
+      "workflows": ["cloud.yml", "local.yml"],
+      "stars": null,
+      "url": "https://github.com/evidentlyai/evidently-ci-example"
+    },
+    {
+      "owner": "mlops-guide",
+      "repo": "dvc-gitactions",
+      "category": "D",
+      "category_name": "Community MLOps Templates",
+      "description": "Complete MLOps cycle with DVC, CML, IBM Watson deployment",
+      "workflow_path": ".github/workflows",
+      "workflows": ["deploy_on_release.yaml", "test_on_push.yaml", "train_evaluate.yaml"],
+      "stars": null,
+      "url": "https://github.com/mlops-guide/dvc-gitactions"
+    },
+    {
+      "owner": "fmind",
+      "repo": "mlops-python-package",
+      "category": "D",
+      "category_name": "Community MLOps Templates",
+      "description": "MLOps Python package template - 1.3k stars",
+      "workflow_path": ".github/workflows",
+      "workflows": ["check.yml", "publish.yml"],
+      "stars": 1300,
+      "url": "https://github.com/fmind/mlops-python-package"
+    },
+    {
+      "owner": "GokuMohandas",
+      "repo": "mlops-course",
+      "category": "D",
+      "category_name": "Community MLOps Templates",
+      "description": "Made With ML - MLOps course with 3.3k stars",
+      "workflow_path": ".github/workflows",
+      "workflows": ["documentation.yaml", "serve.yaml", "workloads.yaml"],
+      "stars": 3300,
+      "url": "https://github.com/GokuMohandas/mlops-course"
+    },
+    {
+      "owner": "machine-learning-apps",
+      "repo": "actions-ml-cicd",
+      "category": "D",
+      "category_name": "Community MLOps Templates",
+      "description": "Collection of GitHub Actions for ML CI/CD",
+      "workflow_path": ".github/workflows",
+      "workflows": ["chatops.yaml", "copy_to_pages.yaml", "deploy.yaml", "ml-cicd.yaml", "nb2docs.yaml", "repo-dispatch.yaml", "see-payload.yaml", "see_token.yaml"],
+      "stars": null,
+      "url": "https://github.com/machine-learning-apps/actions-ml-cicd"
+    },
+    {
+      "owner": "iterative",
+      "repo": "cml-playground",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "CML testing playground - extensive workflow examples",
+      "workflow_path": ".github/workflows",
+      "workflows": ["checks-build.yml", "checks-lights-aws.yml", "checks-pr.yml", "checks-publish.yml", "checks-push.yml", "cml-pr.yml", "gcp-auth.yml"],
+      "stars": null,
+      "url": "https://github.com/iterative/cml-playground",
+      "note": "Contains many issue-specific test workflows; selecting representative ones"
+    },
+    {
+      "owner": "langchain-samples",
+      "repo": "cicd-pipeline-example",
+      "category": "E",
+      "category_name": "LLMOps Tools and Examples",
+      "description": "Official LangChain CI/CD pipeline for LLM agents with LangSmith",
+      "workflow_path": ".github/workflows",
+      "workflows": ["new-lgp-revision.yml", "preview-deployment.yml", "test-with-results.yml"],
+      "stars": null,
+      "url": "https://github.com/langchain-samples/cicd-pipeline-example"
+    },
+    {
+      "owner": "Azure-Samples",
+      "repo": "mlops-enterprise-template",
+      "category": "A",
+      "category_name": "Cloud Provider MLOps Templates",
+      "description": "Azure ML enterprise MLOps template with train/deploy workflows",
+      "workflow_path": ".github/workflows",
+      "workflows": ["deploy_model.yml", "setup.yml", "train_model.yml"],
+      "stars": null,
+      "url": "https://github.com/Azure-Samples/mlops-enterprise-template"
+    },
+    {
+      "owner": "promptfoo",
+      "repo": "promptfoo-action",
+      "category": "E",
+      "category_name": "LLMOps Tools and Examples",
+      "description": "GitHub Action for LLM output testing and evaluation",
+      "workflow_path": ".github/workflows",
+      "workflows": ["check-dist.yml", "codeql-analysis.yml", "dependabot-post-update.yml", "release-please.yml", "test.yml"],
+      "stars": null,
+      "url": "https://github.com/promptfoo/promptfoo-action"
+    }
+  ]
+}

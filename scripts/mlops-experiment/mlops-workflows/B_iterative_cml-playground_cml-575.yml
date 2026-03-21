@@ -1,0 +1,128 @@
+name: cml#575 Reuse Idle Runners
+on:
+  schedule:
+    - cron: '45 14 * * 1' # Mondays 1445 UTC
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'branch to test'
+        required: false
+        type: string
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+jobs:
+  reuse-idle:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || 'master' }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
+          aws-region: us-west-1
+      - name: Create Runner
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          cml runner --cloud-metadata="actions_link=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" --cloud-startup-script=$(echo 'curl https://github.com/${{ github.actor }}.keys >> /home/ubuntu/.ssh/authorized_keys' | base64 -w 0) --reuse-idle --labels=reuse-idle-test --cloud=aws --cloud-region=us-west --cloud-type=t3.small
+      - name: Let Idle...
+        run: sleep 120
+      - name: Create Runner should exit right away
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          cml runner --cloud-metadata="actions_link=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" --cloud-startup-script=$(echo 'curl https://github.com/${{ github.actor }}.keys >> /home/ubuntu/.ssh/authorized_keys' | base64 -w 0) --reuse-idle --labels=reuse-idle-test --cloud=aws --cloud-region=us-west --cloud-type=t3.small
+  test-reuse-idle:
+    needs: [reuse-idle]
+    runs-on: [self-hosted, reuse-idle-test]
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version
+  negitive-reuse-idle:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || 'master' }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
+          aws-region: us-west-1
+      - name: Create Runner
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          cml runner --cloud-metadata="actions_link=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" --cloud-startup-script=$(echo 'curl https://github.com/${{ github.actor }}.keys >> /home/ubuntu/.ssh/authorized_keys' | base64 -w 0) --reuse-idle --labels=negitive-reuse-idle-test --cloud=aws --cloud-region=us-west --cloud-type=t3.small
+  test-negitive-reuse-idle:
+    needs: [negitive-reuse-idle]
+    runs-on: [self-hosted, negitive-reuse-idle-test]
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version
+      - name: Spin for 3 minutes
+        run: sleep 180
+  test-negitive-reuse-idle-2:
+    needs: [negitive-reuse-idle]
+    runs-on: ubuntu-latest
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || 'master' }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - name: Spin for 1 minute
+        run: sleep 60
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
+          aws-region: us-west-1
+      - name: Create Runner, previous runner should be busy create new one
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          cml runner --cloud-metadata="actions_link=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" --cloud-startup-script=$(echo 'curl https://github.com/${{ github.actor }}.keys >> /home/ubuntu/.ssh/authorized_keys' | base64 -w 0) --reuse-idle --labels=negitive-reuse-idle-test --cloud=aws --cloud-region=us-west --cloud-type=t3.small
+  test-negitive-reuse-idle-3:
+    needs: [test-negitive-reuse-idle-2]
+    runs-on: [negitive-reuse-idle-test]
+    steps:
+      - uses: actions/checkout@v3
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version

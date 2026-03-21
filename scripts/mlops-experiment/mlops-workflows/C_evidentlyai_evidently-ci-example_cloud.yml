@@ -1,0 +1,44 @@
+name: Cloud Evidently Check
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  statuses: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  evidently-check:
+    name: Evidently Report
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+      - name: "Install requirements"
+        run: pip install -r requirements.txt
+      - uses: evidentlyai/evidently-report-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        with:
+          config_path: src/evidently_config.py
+          api_key: ${{ secrets.EVIDENTLY_API_KEY }}
+          input_path: cloud://01978953-d7ed-7f70-a517-da6ba7539adc
+          output: cloud://01978930-f954-7ad1-80af-1bb70c2a6dc9

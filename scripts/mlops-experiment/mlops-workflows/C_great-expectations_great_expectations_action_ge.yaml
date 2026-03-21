@@ -1,0 +1,65 @@
+# A test to see if the GitHub Action is working
+# Used for maintainers of this Action.
+name: Action Build
+on:
+  workflow_dispatch: #allows you to trigger manually
+  push:
+
+jobs:     
+  test-local-action:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Copy Repository Contents
+      uses: actions/checkout@main
+
+    - name: execute local action
+      id: ge
+      continue-on-error: true
+      uses: ./
+      with:
+        CHECKPOINTS: "npi.pass,npi.fail"
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        GE_HOME: 'test'
+        DEBUG: true
+      
+    - name: print outputs
+      run: |
+        echo "action_docs_location: $LOC"
+        echo "failing_checkpoints: $FC"
+        echo "passing_checkpoints: $PC"
+        echo "netlify_docs_url: $NU"
+        echo "checkpoint_failure_flag: $CF"
+      env:
+        LOC: ${{ steps.ge.outputs.action_docs_location }}
+        FC: ${{ steps.ge.outputs.failing_checkpoints }}
+        PC: ${{ steps.ge.outputs.passing_checkpoints }}
+        NU: ${{ steps.ge.outputs.netlify_docs_url }}
+        CF: ${{ steps.ge.outputs.checkpoint_failure_flag }}
+        
+    - name: emit event
+      run: echo ${{ github.event_name }}
+        
+  publish-action:
+    needs: test-local-action
+    runs-on: ubuntu-latest
+    if: 1 == 2 && github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    steps:
+
+    - name: Copy Repository Contents
+      uses: actions/checkout@v2  
+
+    - name: DockerHub Login
+      run: |
+        echo ${PASSWORD} | docker login -u $USERNAME --password-stdin
+      env:
+        USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: Build and push container
+      run: |
+        IMAGE_NAME="greatexpectations/greatexpectations-action"
+        docker build -t ${IMAGE_NAME} -t ${IMAGE_NAME}:$(date +%F) .
+        docker push ${IMAGE_NAME}
+  

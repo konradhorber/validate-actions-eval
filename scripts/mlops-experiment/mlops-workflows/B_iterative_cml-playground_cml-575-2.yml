@@ -1,0 +1,107 @@
+name: cml#575 Takes multiple jobs
+on:
+  schedule:
+    - cron: '45 14 * * 1' # Mondays 1445 UTC
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'branch to test'
+        required: false
+        type: string
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+jobs:
+  parallel:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || 'master' }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
+          aws-region: us-west-1
+      - name: Create Runner
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          cml runner --labels=parallel-test --cloud=aws --cloud-region=us-west --cloud-metadata="actions_link=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" --cloud-startup-script=$(echo 'curl https://github.com/${{ github.actor }}.keys >> /home/ubuntu/.ssh/authorized_keys' | base64 -w 0) --cloud-type=t3.small
+  test-parallel:
+    needs: [parallel]
+    runs-on: [self-hosted, parallel-test]
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version
+  test-parallel-2:
+    needs: [parallel]
+    runs-on: [self-hosted, parallel-test]
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Wait
+        run: sleep 120
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version
+  sequence:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || 'master' }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
+          aws-region: us-west-1
+      - name: Create Runner
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          cml runner --labels=sequence-test --cloud=aws --cloud-region=us-west --cloud-metadata="actions_link=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" --cloud-startup-script=$(echo 'curl https://github.com/${{ github.actor }}.keys >> /home/ubuntu/.ssh/authorized_keys' | base64 -w 0) --cloud-type=t3.small
+  test-sequence:
+    needs: [sequence]
+    runs-on: [self-hosted, sequence-test]
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version
+  test-sequence-2:
+    needs: [sequence, test-sequence]
+    runs-on: [self-hosted, sequence-test]
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Wait
+        run: sleep 120
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version

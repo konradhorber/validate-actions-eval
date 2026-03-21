@@ -1,0 +1,953 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-03-21T13:35:36.931177Z",
+    "methodology": "See METHODOLOGY.md for selection criteria",
+    "categories": {
+      "A": "Cloud Provider MLOps Templates",
+      "B": "ML Framework Official Examples",
+      "C": "Data/Model Quality Tools",
+      "D": "Community MLOps Templates",
+      "E": "LLMOps Tools and Examples"
+    },
+    "tool_version": "validate-actions MLOps study"
+  },
+  "summary": {
+    "total_repos": 18,
+    "total_workflows": 84,
+    "by_category": {
+      "A": {
+        "name": "Cloud Provider MLOps Templates",
+        "repos": 3,
+        "workflows": 9
+      },
+      "B": {
+        "name": "ML Framework Official Examples",
+        "repos": 7,
+        "workflows": 46
+      },
+      "C": {
+        "name": "Data/Model Quality Tools",
+        "repos": 2,
+        "workflows": 5
+      },
+      "D": {
+        "name": "Community MLOps Templates",
+        "repos": 4,
+        "workflows": 16
+      },
+      "E": {
+        "name": "LLMOps Tools and Examples",
+        "repos": 2,
+        "workflows": 8
+      }
+    }
+  },
+  "repositories": [
+    {
+      "owner": "aws-samples",
+      "repo": "mlops-sagemaker-github-actions",
+      "category": "A",
+      "category_name": "Cloud Provider MLOps Templates",
+      "description": "MLOps example using Amazon SageMaker Pipeline and GitHub Actions",
+      "workflow_path": "seedcode/.github/workflows",
+      "github_url": "https://github.com/aws-samples/mlops-sagemaker-github-actions",
+      "commit_sha": "407f9919e7bdd06d4a2e8cb8792c5a4360dd94df",
+      "stars": 88,
+      "workflows_collected": [
+        {
+          "original_name": "build.yml",
+          "saved_as": "A_aws-samples_mlops-sagemaker-github-actions_build.yml",
+          "source_url": "https://github.com/aws-samples/mlops-sagemaker-github-actions/blob/main/seedcode/.github/workflows/build.yml",
+          "download_url": "https://raw.githubusercontent.com/aws-samples/mlops-sagemaker-github-actions/main/seedcode/.github/workflows/build.yml",
+          "sha": "70d72e29d8ed86da3570912a0d0925af54a0f32a",
+          "size_bytes": 2319
+        },
+        {
+          "original_name": "deploy.yml",
+          "saved_as": "A_aws-samples_mlops-sagemaker-github-actions_deploy.yml",
+          "source_url": "https://github.com/aws-samples/mlops-sagemaker-github-actions/blob/main/seedcode/.github/workflows/deploy.yml",
+          "download_url": "https://raw.githubusercontent.com/aws-samples/mlops-sagemaker-github-actions/main/seedcode/.github/workflows/deploy.yml",
+          "sha": "8461ca8805151be95cd2e21a6ea7f69123c3e2cd",
+          "size_bytes": 2889
+        }
+      ]
+    },
+    {
+      "owner": "Azure",
+      "repo": "mlops-v2-gha-demo",
+      "category": "A",
+      "category_name": "Cloud Provider MLOps Templates",
+      "description": "Azure MLOps v2 GitHub Actions Demo - classical ML pattern",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/Azure/mlops-v2-gha-demo",
+      "commit_sha": "bd61f8c79c7c4cf4e30fe83a88e2b0532996ef33",
+      "stars": 25,
+      "workflows_collected": [
+        {
+          "original_name": "deploy-batch-endpoint-pipeline-classical.yml",
+          "saved_as": "A_Azure_mlops-v2-gha-demo_deploy-batch-endpoint-pipeline-classical.yml",
+          "source_url": "https://github.com/Azure/mlops-v2-gha-demo/blob/main/.github/workflows/deploy-batch-endpoint-pipeline-classical.yml",
+          "download_url": "https://raw.githubusercontent.com/Azure/mlops-v2-gha-demo/main/.github/workflows/deploy-batch-endpoint-pipeline-classical.yml",
+          "sha": "527105a09e1bcd649e3bae6c6d9cc0d058f863ca",
+          "size_bytes": 1777
+        },
+        {
+          "original_name": "deploy-model-training-pipeline-classical.yml",
+          "saved_as": "A_Azure_mlops-v2-gha-demo_deploy-model-training-pipeline-classical.yml",
+          "source_url": "https://github.com/Azure/mlops-v2-gha-demo/blob/main/.github/workflows/deploy-model-training-pipeline-classical.yml",
+          "download_url": "https://raw.githubusercontent.com/Azure/mlops-v2-gha-demo/main/.github/workflows/deploy-model-training-pipeline-classical.yml",
+          "sha": "84985f9e3a0669771170838991983821ba93d9c6",
+          "size_bytes": 2096
+        },
+        {
+          "original_name": "deploy-online-endpoint-pipeline-classical.yml",
+          "saved_as": "A_Azure_mlops-v2-gha-demo_deploy-online-endpoint-pipeline-classical.yml",
+          "source_url": "https://github.com/Azure/mlops-v2-gha-demo/blob/main/.github/workflows/deploy-online-endpoint-pipeline-classical.yml",
+          "download_url": "https://raw.githubusercontent.com/Azure/mlops-v2-gha-demo/main/.github/workflows/deploy-online-endpoint-pipeline-classical.yml",
+          "sha": "6870446d3037a0c8594637c61b9c28e07c7f237b",
+          "size_bytes": 1798
+        },
+        {
+          "original_name": "tf-gha-deploy-infra.yml",
+          "saved_as": "A_Azure_mlops-v2-gha-demo_tf-gha-deploy-infra.yml",
+          "source_url": "https://github.com/Azure/mlops-v2-gha-demo/blob/main/.github/workflows/tf-gha-deploy-infra.yml",
+          "download_url": "https://raw.githubusercontent.com/Azure/mlops-v2-gha-demo/main/.github/workflows/tf-gha-deploy-infra.yml",
+          "sha": "7b21ab01523e982544bd5d8132c648ec61d7e713",
+          "size_bytes": 2147
+        }
+      ]
+    },
+    {
+      "owner": "iterative",
+      "repo": "cml",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "CML - Continuous Machine Learning CI/CD for ML",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/iterative/cml",
+      "commit_sha": "a3a66c74b218b08710f42bf599b066e37cb4cba7",
+      "stars": 4170,
+      "workflows_collected": [
+        {
+          "original_name": "codeql-analysis.yml",
+          "saved_as": "B_iterative_cml_codeql-analysis.yml",
+          "source_url": "https://github.com/iterative/cml/blob/main/.github/workflows/codeql-analysis.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml/main/.github/workflows/codeql-analysis.yml",
+          "sha": "a5cbd1b2ef31e51398e855ddf69b215f6c34d262",
+          "size_bytes": 618
+        },
+        {
+          "original_name": "gitlab.yml",
+          "saved_as": "B_iterative_cml_gitlab.yml",
+          "source_url": "https://github.com/iterative/cml/blob/main/.github/workflows/gitlab.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml/main/.github/workflows/gitlab.yml",
+          "sha": "b7ba07aff389fd0580bf01aaf1047c5d5cb9eae6",
+          "size_bytes": 2474
+        },
+        {
+          "original_name": "images.yml",
+          "saved_as": "B_iterative_cml_images.yml",
+          "source_url": "https://github.com/iterative/cml/blob/main/.github/workflows/images.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml/main/.github/workflows/images.yml",
+          "sha": "5453898bd57b699869af1f1358b0100356ecc438",
+          "size_bytes": 4710
+        },
+        {
+          "original_name": "release.yml",
+          "saved_as": "B_iterative_cml_release.yml",
+          "source_url": "https://github.com/iterative/cml/blob/main/.github/workflows/release.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml/main/.github/workflows/release.yml",
+          "sha": "1dff6a10079af63e80eace03b49aa8999fa7613a",
+          "size_bytes": 1425
+        },
+        {
+          "original_name": "test-deploy.yml",
+          "saved_as": "B_iterative_cml_test-deploy.yml",
+          "source_url": "https://github.com/iterative/cml/blob/main/.github/workflows/test-deploy.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml/main/.github/workflows/test-deploy.yml",
+          "sha": "eb1c23ed710c73e7b9342ddb25dea434249afc34",
+          "size_bytes": 4843
+        },
+        {
+          "original_name": "trigger-external.yml",
+          "saved_as": "B_iterative_cml_trigger-external.yml",
+          "source_url": "https://github.com/iterative/cml/blob/main/.github/workflows/trigger-external.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml/main/.github/workflows/trigger-external.yml",
+          "sha": "df5bdaa63e3f8a33304b8d279845009784755a6a",
+          "size_bytes": 2213
+        }
+      ]
+    },
+    {
+      "owner": "iterative",
+      "repo": "cml-runner-base-case",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "Sample CML project - provisions EC2 for ML training",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/iterative/cml-runner-base-case",
+      "commit_sha": "5f4c5053c532734290f172deb466b372e3789f59",
+      "stars": 5,
+      "workflows_collected": [
+        {
+          "original_name": "cml.yaml",
+          "saved_as": "B_iterative_cml-runner-base-case_cml.yaml",
+          "source_url": "https://github.com/iterative/cml-runner-base-case/blob/master/.github/workflows/cml.yaml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-runner-base-case/master/.github/workflows/cml.yaml",
+          "sha": "e29ef19ea06f0a7d5428fcc26155a540d62d3fe3",
+          "size_bytes": 1186
+        }
+      ]
+    },
+    {
+      "owner": "iterative",
+      "repo": "cml_cloud_case",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "CML with Terraform - neural style transfer on EC2",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/iterative/cml_cloud_case",
+      "commit_sha": "bd8923be49b223ce29c6e05649b5979d0618996e",
+      "stars": 22,
+      "workflows_collected": [
+        {
+          "original_name": "cml.yaml",
+          "saved_as": "B_iterative_cml_cloud_case_cml.yaml",
+          "source_url": "https://github.com/iterative/cml_cloud_case/blob/master/.github/workflows/cml.yaml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml_cloud_case/master/.github/workflows/cml.yaml",
+          "sha": "bfc8c0224c24f26d92ac30cf5c899cfacffca89b",
+          "size_bytes": 1776
+        }
+      ]
+    },
+    {
+      "owner": "iterative",
+      "repo": "setup-cml",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "GitHub Action for CML setup",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/iterative/setup-cml",
+      "commit_sha": "f12ea7685438c1fc438d50f77519b3860cf5fa98",
+      "stars": 32,
+      "workflows_collected": [
+        {
+          "original_name": "check.yml",
+          "saved_as": "B_iterative_setup-cml_check.yml",
+          "source_url": "https://github.com/iterative/setup-cml/blob/v2/.github/workflows/check.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/setup-cml/v2/.github/workflows/check.yml",
+          "sha": "de90746a2dbeb4efb32c40d392037c6dfed1eb8e",
+          "size_bytes": 2097
+        }
+      ]
+    },
+    {
+      "owner": "zenml-io",
+      "repo": "zenml-gitflow",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "ZenML with Git workflows - ML pipeline orchestration",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/zenml-io/zenml-gitflow",
+      "commit_sha": "9d832d0286719223b58d6e45038e74c01481d5ac",
+      "stars": 75,
+      "workflows_collected": [
+        {
+          "original_name": "pipeline_run.yaml",
+          "saved_as": "B_zenml-io_zenml-gitflow_pipeline_run.yaml",
+          "source_url": "https://github.com/zenml-io/zenml-gitflow/blob/main/.github/workflows/pipeline_run.yaml",
+          "download_url": "https://raw.githubusercontent.com/zenml-io/zenml-gitflow/main/.github/workflows/pipeline_run.yaml",
+          "sha": "48b1947bbc73497cc5f4709d1d3c3f6fb5c943b9",
+          "size_bytes": 3730
+        }
+      ]
+    },
+    {
+      "owner": "Paulescu",
+      "repo": "zenml-example",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "ZenML MLOps template with staging/production deployments",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/Paulescu/zenml-example",
+      "commit_sha": "baac8b6479119ec9d7ab3e9f40e6732b04340630",
+      "stars": 1,
+      "workflows_collected": [
+        {
+          "original_name": "production.yaml",
+          "saved_as": "B_Paulescu_zenml-example_production.yaml",
+          "source_url": "https://github.com/Paulescu/zenml-example/blob/main/.github/workflows/production.yaml",
+          "download_url": "https://raw.githubusercontent.com/Paulescu/zenml-example/main/.github/workflows/production.yaml",
+          "sha": "f2fe1f9ad0f1795833edaf7b960f25268cd62543",
+          "size_bytes": 2632
+        },
+        {
+          "original_name": "staging.yaml",
+          "saved_as": "B_Paulescu_zenml-example_staging.yaml",
+          "source_url": "https://github.com/Paulescu/zenml-example/blob/main/.github/workflows/staging.yaml",
+          "download_url": "https://raw.githubusercontent.com/Paulescu/zenml-example/main/.github/workflows/staging.yaml",
+          "sha": "8b5c50c32621eda6c2e87d2bbe57782e4c50df13",
+          "size_bytes": 2562
+        }
+      ]
+    },
+    {
+      "owner": "great-expectations",
+      "repo": "great_expectations_action",
+      "category": "C",
+      "category_name": "Data/Model Quality Tools",
+      "description": "GitHub Action for Great Expectations data validation",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/great-expectations/great_expectations_action",
+      "commit_sha": "5d719a6d2828fb263e8226ab3ad4e4902f1a2ed5",
+      "stars": 83,
+      "workflows_collected": [
+        {
+          "original_name": "ge-pr-comment-demo.yaml",
+          "saved_as": "C_great-expectations_great_expectations_action_ge-pr-comment-demo.yaml",
+          "source_url": "https://github.com/great-expectations/great_expectations_action/blob/main/.github/workflows/ge-pr-comment-demo.yaml",
+          "download_url": "https://raw.githubusercontent.com/great-expectations/great_expectations_action/main/.github/workflows/ge-pr-comment-demo.yaml",
+          "sha": "35e108fe602ff4dc05bc950e316e70ae06885fa2",
+          "size_bytes": 3474
+        },
+        {
+          "original_name": "ge-pr-push-demo.yaml",
+          "saved_as": "C_great-expectations_great_expectations_action_ge-pr-push-demo.yaml",
+          "source_url": "https://github.com/great-expectations/great_expectations_action/blob/main/.github/workflows/ge-pr-push-demo.yaml",
+          "download_url": "https://raw.githubusercontent.com/great-expectations/great_expectations_action/main/.github/workflows/ge-pr-push-demo.yaml",
+          "sha": "927c3460d218132b483e35ea03d5ea592fd6b9dd",
+          "size_bytes": 2613
+        },
+        {
+          "original_name": "ge.yaml",
+          "saved_as": "C_great-expectations_great_expectations_action_ge.yaml",
+          "source_url": "https://github.com/great-expectations/great_expectations_action/blob/main/.github/workflows/ge.yaml",
+          "download_url": "https://raw.githubusercontent.com/great-expectations/great_expectations_action/main/.github/workflows/ge.yaml",
+          "sha": "5d65bcf8091bc7a082a0eee4baf35e6a4df5e232",
+          "size_bytes": 1940
+        }
+      ]
+    },
+    {
+      "owner": "evidentlyai",
+      "repo": "evidently-ci-example",
+      "category": "C",
+      "category_name": "Data/Model Quality Tools",
+      "description": "Evidently AI CI/CD example - LLM and data quality testing",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/evidentlyai/evidently-ci-example",
+      "commit_sha": "a0d5250390dd22f3335a4b835fb152ae990a6648",
+      "stars": 3,
+      "workflows_collected": [
+        {
+          "original_name": "cloud.yml",
+          "saved_as": "C_evidentlyai_evidently-ci-example_cloud.yml",
+          "source_url": "https://github.com/evidentlyai/evidently-ci-example/blob/main/.github/workflows/cloud.yml",
+          "download_url": "https://raw.githubusercontent.com/evidentlyai/evidently-ci-example/main/.github/workflows/cloud.yml",
+          "sha": "6c1f0f09bfb63c26756a6f6112056d28b61bc075",
+          "size_bytes": 1133
+        },
+        {
+          "original_name": "local.yml",
+          "saved_as": "C_evidentlyai_evidently-ci-example_local.yml",
+          "source_url": "https://github.com/evidentlyai/evidently-ci-example/blob/main/.github/workflows/local.yml",
+          "download_url": "https://raw.githubusercontent.com/evidentlyai/evidently-ci-example/main/.github/workflows/local.yml",
+          "sha": "fbc5cd62650a67c4f62a682bdc99e40c05efa580",
+          "size_bytes": 1062
+        }
+      ]
+    },
+    {
+      "owner": "mlops-guide",
+      "repo": "dvc-gitactions",
+      "category": "D",
+      "category_name": "Community MLOps Templates",
+      "description": "Complete MLOps cycle with DVC, CML, IBM Watson deployment",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/mlops-guide/dvc-gitactions",
+      "commit_sha": "d2c018a5598ccba5fa41f94f42ceb25fd8785ebb",
+      "stars": 49,
+      "workflows_collected": [
+        {
+          "original_name": "deploy_on_release.yaml",
+          "saved_as": "D_mlops-guide_dvc-gitactions_deploy_on_release.yaml",
+          "source_url": "https://github.com/mlops-guide/dvc-gitactions/blob/master/.github/workflows/deploy_on_release.yaml",
+          "download_url": "https://raw.githubusercontent.com/mlops-guide/dvc-gitactions/master/.github/workflows/deploy_on_release.yaml",
+          "sha": "9083bed16c827a597827d00b10673ef225e7a6ae",
+          "size_bytes": 1090
+        },
+        {
+          "original_name": "test_on_push.yaml",
+          "saved_as": "D_mlops-guide_dvc-gitactions_test_on_push.yaml",
+          "source_url": "https://github.com/mlops-guide/dvc-gitactions/blob/master/.github/workflows/test_on_push.yaml",
+          "download_url": "https://raw.githubusercontent.com/mlops-guide/dvc-gitactions/master/.github/workflows/test_on_push.yaml",
+          "sha": "665b9fb7e8a92a26739c4ad14addf8162efcc4b8",
+          "size_bytes": 664
+        },
+        {
+          "original_name": "train_evaluate.yaml",
+          "saved_as": "D_mlops-guide_dvc-gitactions_train_evaluate.yaml",
+          "source_url": "https://github.com/mlops-guide/dvc-gitactions/blob/master/.github/workflows/train_evaluate.yaml",
+          "download_url": "https://raw.githubusercontent.com/mlops-guide/dvc-gitactions/master/.github/workflows/train_evaluate.yaml",
+          "sha": "cf65ab3248a587423a7bb7560b90e5c9427d4fd7",
+          "size_bytes": 1135
+        }
+      ]
+    },
+    {
+      "owner": "fmind",
+      "repo": "mlops-python-package",
+      "category": "D",
+      "category_name": "Community MLOps Templates",
+      "description": "MLOps Python package template - 1.3k stars",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/fmind/mlops-python-package",
+      "commit_sha": "d8715c4666ecad7ac95bc8fa86c49ebc7fb7e4fd",
+      "stars": 1400,
+      "workflows_collected": [
+        {
+          "original_name": "check.yml",
+          "saved_as": "D_fmind_mlops-python-package_check.yml",
+          "source_url": "https://github.com/fmind/mlops-python-package/blob/main/.github/workflows/check.yml",
+          "download_url": "https://raw.githubusercontent.com/fmind/mlops-python-package/main/.github/workflows/check.yml",
+          "sha": "f295fd23184d9b91e52c81f340e4018879df8872",
+          "size_bytes": 499
+        },
+        {
+          "original_name": "publish.yml",
+          "saved_as": "D_fmind_mlops-python-package_publish.yml",
+          "source_url": "https://github.com/fmind/mlops-python-package/blob/main/.github/workflows/publish.yml",
+          "download_url": "https://raw.githubusercontent.com/fmind/mlops-python-package/main/.github/workflows/publish.yml",
+          "sha": "5230ccba0be7ffdbea27d1998573508808a285c2",
+          "size_bytes": 1216
+        }
+      ]
+    },
+    {
+      "owner": "GokuMohandas",
+      "repo": "mlops-course",
+      "category": "D",
+      "category_name": "Community MLOps Templates",
+      "description": "Made With ML - MLOps course with 3.3k stars",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/GokuMohandas/mlops-course",
+      "commit_sha": "de51e65910025ef81ef08f7c871c9fdd9bec33f5",
+      "stars": 3320,
+      "workflows_collected": [
+        {
+          "original_name": "documentation.yaml",
+          "saved_as": "D_GokuMohandas_mlops-course_documentation.yaml",
+          "source_url": "https://github.com/GokuMohandas/mlops-course/blob/main/.github/workflows/documentation.yaml",
+          "download_url": "https://raw.githubusercontent.com/GokuMohandas/mlops-course/main/.github/workflows/documentation.yaml",
+          "sha": "2d16afddc90cae2ab010bc058fae3302b9f49432",
+          "size_bytes": 482
+        },
+        {
+          "original_name": "serve.yaml",
+          "saved_as": "D_GokuMohandas_mlops-course_serve.yaml",
+          "source_url": "https://github.com/GokuMohandas/mlops-course/blob/main/.github/workflows/serve.yaml",
+          "download_url": "https://raw.githubusercontent.com/GokuMohandas/mlops-course/main/.github/workflows/serve.yaml",
+          "sha": "60cd8dbaa31ab1fdd0c52deaabe2ce9b739de7f6",
+          "size_bytes": 976
+        },
+        {
+          "original_name": "workloads.yaml",
+          "saved_as": "D_GokuMohandas_mlops-course_workloads.yaml",
+          "source_url": "https://github.com/GokuMohandas/mlops-course/blob/main/.github/workflows/workloads.yaml",
+          "download_url": "https://raw.githubusercontent.com/GokuMohandas/mlops-course/main/.github/workflows/workloads.yaml",
+          "sha": "cfc587fcbce53b7e2105ef602681bf562b261c6e",
+          "size_bytes": 1738
+        }
+      ]
+    },
+    {
+      "owner": "machine-learning-apps",
+      "repo": "actions-ml-cicd",
+      "category": "D",
+      "category_name": "Community MLOps Templates",
+      "description": "Collection of GitHub Actions for ML CI/CD",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/machine-learning-apps/actions-ml-cicd",
+      "commit_sha": "c10862b2765f7dfee78cef1c72e0223db46dc0a1",
+      "stars": 205,
+      "workflows_collected": [
+        {
+          "original_name": "chatops.yaml",
+          "saved_as": "D_machine-learning-apps_actions-ml-cicd_chatops.yaml",
+          "source_url": "https://github.com/machine-learning-apps/actions-ml-cicd/blob/master/.github/workflows/chatops.yaml",
+          "download_url": "https://raw.githubusercontent.com/machine-learning-apps/actions-ml-cicd/master/.github/workflows/chatops.yaml",
+          "sha": "12367d15b6c44ee3fde999bb0e1723c812766c72",
+          "size_bytes": 2276
+        },
+        {
+          "original_name": "copy_to_pages.yaml",
+          "saved_as": "D_machine-learning-apps_actions-ml-cicd_copy_to_pages.yaml",
+          "source_url": "https://github.com/machine-learning-apps/actions-ml-cicd/blob/master/.github/workflows/copy_to_pages.yaml",
+          "download_url": "https://raw.githubusercontent.com/machine-learning-apps/actions-ml-cicd/master/.github/workflows/copy_to_pages.yaml",
+          "sha": "2823bd725fa7e1b75c78a38acc11978ab97a22d9",
+          "size_bytes": 1016
+        },
+        {
+          "original_name": "deploy.yaml",
+          "saved_as": "D_machine-learning-apps_actions-ml-cicd_deploy.yaml",
+          "source_url": "https://github.com/machine-learning-apps/actions-ml-cicd/blob/master/.github/workflows/deploy.yaml",
+          "download_url": "https://raw.githubusercontent.com/machine-learning-apps/actions-ml-cicd/master/.github/workflows/deploy.yaml",
+          "sha": "b0798b47e03cad1a49cda73d97198b5f0cefbe33",
+          "size_bytes": 1671
+        },
+        {
+          "original_name": "ml-cicd.yaml",
+          "saved_as": "D_machine-learning-apps_actions-ml-cicd_ml-cicd.yaml",
+          "source_url": "https://github.com/machine-learning-apps/actions-ml-cicd/blob/master/.github/workflows/ml-cicd.yaml",
+          "download_url": "https://raw.githubusercontent.com/machine-learning-apps/actions-ml-cicd/master/.github/workflows/ml-cicd.yaml",
+          "sha": "49bae03588a5fc1df6bd8cb7886cd1d4fc221cbe",
+          "size_bytes": 4371
+        },
+        {
+          "original_name": "nb2docs.yaml",
+          "saved_as": "D_machine-learning-apps_actions-ml-cicd_nb2docs.yaml",
+          "source_url": "https://github.com/machine-learning-apps/actions-ml-cicd/blob/master/.github/workflows/nb2docs.yaml",
+          "download_url": "https://raw.githubusercontent.com/machine-learning-apps/actions-ml-cicd/master/.github/workflows/nb2docs.yaml",
+          "sha": "80324fad2bcd0803dbb23d48bd14314518546b21",
+          "size_bytes": 1261
+        },
+        {
+          "original_name": "repo-dispatch.yaml",
+          "saved_as": "D_machine-learning-apps_actions-ml-cicd_repo-dispatch.yaml",
+          "source_url": "https://github.com/machine-learning-apps/actions-ml-cicd/blob/master/.github/workflows/repo-dispatch.yaml",
+          "download_url": "https://raw.githubusercontent.com/machine-learning-apps/actions-ml-cicd/master/.github/workflows/repo-dispatch.yaml",
+          "sha": "4249869b45697617719aa13fa5181cb9ca41d47e",
+          "size_bytes": 2041
+        },
+        {
+          "original_name": "see-payload.yaml",
+          "saved_as": "D_machine-learning-apps_actions-ml-cicd_see-payload.yaml",
+          "source_url": "https://github.com/machine-learning-apps/actions-ml-cicd/blob/master/.github/workflows/see-payload.yaml",
+          "download_url": "https://raw.githubusercontent.com/machine-learning-apps/actions-ml-cicd/master/.github/workflows/see-payload.yaml",
+          "sha": "1342fc51924dff048b9187776a709d1a6b72d863",
+          "size_bytes": 306
+        },
+        {
+          "original_name": "see_token.yaml",
+          "saved_as": "D_machine-learning-apps_actions-ml-cicd_see_token.yaml",
+          "source_url": "https://github.com/machine-learning-apps/actions-ml-cicd/blob/master/.github/workflows/see_token.yaml",
+          "download_url": "https://raw.githubusercontent.com/machine-learning-apps/actions-ml-cicd/master/.github/workflows/see_token.yaml",
+          "sha": "785756b7f76ac0cf35a9e7cd67fe9b8763e45551",
+          "size_bytes": 369
+        }
+      ]
+    },
+    {
+      "owner": "iterative",
+      "repo": "cml-playground",
+      "category": "B",
+      "category_name": "ML Framework Official Examples",
+      "description": "CML testing playground - extensive workflow examples",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/iterative/cml-playground",
+      "commit_sha": "5e16220041dfa812052f85f3e24a7bc49ba51c83",
+      "stars": 4,
+      "workflows_collected": [
+        {
+          "original_name": "checks-build.yml",
+          "saved_as": "B_iterative_cml-playground_checks-build.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/checks-build.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/checks-build.yml",
+          "sha": "7f49e9776efeeb575aefd475b9d014d41b0e4779",
+          "size_bytes": 195
+        },
+        {
+          "original_name": "checks-lights-aws.yml",
+          "saved_as": "B_iterative_cml-playground_checks-lights-aws.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/checks-lights-aws.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/checks-lights-aws.yml",
+          "sha": "21f8037e3b4feb157da9aa9bdc5935b6747427b8",
+          "size_bytes": 2111
+        },
+        {
+          "original_name": "checks-pr.yml",
+          "saved_as": "B_iterative_cml-playground_checks-pr.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/checks-pr.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/checks-pr.yml",
+          "sha": "2de4cd322268e8fc1e6e40c986ee78f43b9d3944",
+          "size_bytes": 222
+        },
+        {
+          "original_name": "checks-publish.yml",
+          "saved_as": "B_iterative_cml-playground_checks-publish.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/checks-publish.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/checks-publish.yml",
+          "sha": "049f06fdbb9f34de2610fa2aebafaa552500ca08",
+          "size_bytes": 1862
+        },
+        {
+          "original_name": "checks-push.yml",
+          "saved_as": "B_iterative_cml-playground_checks-push.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/checks-push.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/checks-push.yml",
+          "sha": "9e37b3f07b135a93d10557195acc3a99d29ed58b",
+          "size_bytes": 240
+        },
+        {
+          "original_name": "cml-1049-1.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1049-1.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1049-1.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1049-1.yml",
+          "sha": "a4a62a55255dd0833f4a02feda6023a402e68344",
+          "size_bytes": 1889
+        },
+        {
+          "original_name": "cml-1049-2.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1049-2.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1049-2.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1049-2.yml",
+          "sha": "0b3000223c65a05cac4d3d08e47ddb2746066370",
+          "size_bytes": 1890
+        },
+        {
+          "original_name": "cml-1049.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1049.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1049.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1049.yml",
+          "sha": "730f9e8cc62b7625e915348e0fd33cd14044a459",
+          "size_bytes": 1878
+        },
+        {
+          "original_name": "cml-1063.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1063.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1063.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1063.yml",
+          "sha": "5fbcf4b32f8b3d1b4dc851996a1ad5ed0976b53d",
+          "size_bytes": 2787
+        },
+        {
+          "original_name": "cml-1065.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1065.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1065.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1065.yml",
+          "sha": "6be43b3d704d40cfc10d82b90c812d8d07e80db9",
+          "size_bytes": 1995
+        },
+        {
+          "original_name": "cml-1075.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1075.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1075.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1075.yml",
+          "sha": "c2b5fa9accab1baba38b07d9a5a7b68a0c9b5901",
+          "size_bytes": 2902
+        },
+        {
+          "original_name": "cml-1104.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1104.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1104.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1104.yml",
+          "sha": "5e8cfb3b9ff8165db3cb1c76f6f8c1a2ab76706d",
+          "size_bytes": 2323
+        },
+        {
+          "original_name": "cml-1116.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1116.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1116.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1116.yml",
+          "sha": "31a688c47e79531d3977a4d713c7c8a097843bc5",
+          "size_bytes": 3368
+        },
+        {
+          "original_name": "cml-1121.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1121.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1121.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1121.yml",
+          "sha": "2bc2315f5c8b0bdb9375a51c088a83b3f867abaf",
+          "size_bytes": 1823
+        },
+        {
+          "original_name": "cml-1134.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1134.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1134.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1134.yml",
+          "sha": "fa753de8321f299063d8084adcf7498ffaeaa21d",
+          "size_bytes": 1013
+        },
+        {
+          "original_name": "cml-1164.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1164.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1164.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1164.yml",
+          "sha": "69d2f8e8612761bd873eba52268812e5415ea6ab",
+          "size_bytes": 2702
+        },
+        {
+          "original_name": "cml-1166.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1166.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1166.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1166.yml",
+          "sha": "685984ceddd70dd84c2e0875225e1d1545f8d8b1",
+          "size_bytes": 2206
+        },
+        {
+          "original_name": "cml-1173-2.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1173-2.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1173-2.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1173-2.yml",
+          "sha": "5ae4e0ceb265da40e514acdc9cb8d780c3c1bfeb",
+          "size_bytes": 1354
+        },
+        {
+          "original_name": "cml-1173.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1173.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1173.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1173.yml",
+          "sha": "ac96cbfdb778f14a692fef5e057b2a79fecfd787",
+          "size_bytes": 3896
+        },
+        {
+          "original_name": "cml-1202.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1202.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1202.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1202.yml",
+          "sha": "754b9f602f69c2e9edb3b671f076eedb38f80f9c",
+          "size_bytes": 1178
+        },
+        {
+          "original_name": "cml-1225.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1225.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1225.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1225.yml",
+          "sha": "e17e9cd17ad8debf85612a10c20cf621b2a48170",
+          "size_bytes": 2591
+        },
+        {
+          "original_name": "cml-1228.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1228.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1228.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1228.yml",
+          "sha": "4ca1ce8f84787569fbd98d9d06041a602cc3cfd1",
+          "size_bytes": 13724
+        },
+        {
+          "original_name": "cml-1233.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1233.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1233.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1233.yml",
+          "sha": "cfca5eb7edda0fa87b8da447abc5b5c0417a2cca",
+          "size_bytes": 2960
+        },
+        {
+          "original_name": "cml-1302-1.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1302-1.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1302-1.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1302-1.yml",
+          "sha": "9256e1ac7e5cc722bf619ad09715b24266adba8d",
+          "size_bytes": 1789
+        },
+        {
+          "original_name": "cml-1302-2.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1302-2.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1302-2.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1302-2.yml",
+          "sha": "97d4b5e13e0c9296b4302b17e769c91e0b53e58f",
+          "size_bytes": 1971
+        },
+        {
+          "original_name": "cml-1344.yml",
+          "saved_as": "B_iterative_cml-playground_cml-1344.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-1344.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-1344.yml",
+          "sha": "4c986a832addd0f84b67da8f636c9b12d7c183b6",
+          "size_bytes": 1038
+        },
+        {
+          "original_name": "cml-561.yml",
+          "saved_as": "B_iterative_cml-playground_cml-561.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-561.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-561.yml",
+          "sha": "dcc1a1a999226c5c5c18d1851e72df1efa2b3a9f",
+          "size_bytes": 2416
+        },
+        {
+          "original_name": "cml-575-2.yml",
+          "saved_as": "B_iterative_cml-playground_cml-575-2.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-575-2.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-575-2.yml",
+          "sha": "728723ed79a2663c854f78fff7a074bda689c912",
+          "size_bytes": 3632
+        },
+        {
+          "original_name": "cml-575.yml",
+          "saved_as": "B_iterative_cml-playground_cml-575.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-575.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-575.yml",
+          "sha": "43be0ead167ba903ce3da4875d10855f852c028d",
+          "size_bytes": 5292
+        },
+        {
+          "original_name": "cml-pr.yml",
+          "saved_as": "B_iterative_cml-playground_cml-pr.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/cml-pr.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/cml-pr.yml",
+          "sha": "a6cd5b109f2ec1a88bc5d282cb8a7fd6acee0602",
+          "size_bytes": 1859
+        },
+        {
+          "original_name": "gcp-auth.yml",
+          "saved_as": "B_iterative_cml-playground_gcp-auth.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/gcp-auth.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/gcp-auth.yml",
+          "sha": "9ab857a41bfb8eef02e7e584ff7485646184ae4e",
+          "size_bytes": 3501
+        },
+        {
+          "original_name": "setup-dvc-42.yml",
+          "saved_as": "B_iterative_cml-playground_setup-dvc-42.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/setup-dvc-42.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/setup-dvc-42.yml",
+          "sha": "b2bcbad5dbd38a3d6c9b0273348160e72def45ab",
+          "size_bytes": 900
+        },
+        {
+          "original_name": "tpi-621.yml",
+          "saved_as": "B_iterative_cml-playground_tpi-621.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/tpi-621.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/tpi-621.yml",
+          "sha": "9818c2a279508603414b4869da0886702be36f49",
+          "size_bytes": 2824
+        },
+        {
+          "original_name": "tpi-670.yml",
+          "saved_as": "B_iterative_cml-playground_tpi-670.yml",
+          "source_url": "https://github.com/iterative/cml-playground/blob/main/.github/workflows/tpi-670.yml",
+          "download_url": "https://raw.githubusercontent.com/iterative/cml-playground/main/.github/workflows/tpi-670.yml",
+          "sha": "f12586db162945b33d007fc89fbc55ae1e652c7d",
+          "size_bytes": 4836
+        }
+      ]
+    },
+    {
+      "owner": "langchain-samples",
+      "repo": "cicd-pipeline-example",
+      "category": "E",
+      "category_name": "LLMOps Tools and Examples",
+      "description": "Official LangChain CI/CD pipeline for LLM agents with LangSmith",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/langchain-samples/cicd-pipeline-example",
+      "commit_sha": "0325d3d4e18a68118861316465c1d1035cea1470",
+      "stars": 28,
+      "workflows_collected": [
+        {
+          "original_name": "new-lgp-revision.yml",
+          "saved_as": "E_langchain-samples_cicd-pipeline-example_new-lgp-revision.yml",
+          "source_url": "https://github.com/langchain-samples/cicd-pipeline-example/blob/main/.github/workflows/new-lgp-revision.yml",
+          "download_url": "https://raw.githubusercontent.com/langchain-samples/cicd-pipeline-example/main/.github/workflows/new-lgp-revision.yml",
+          "sha": "4b950e2b887c4e7320f534ee3e5873c53cc72e57",
+          "size_bytes": 6402
+        },
+        {
+          "original_name": "preview-deployment.yml",
+          "saved_as": "E_langchain-samples_cicd-pipeline-example_preview-deployment.yml",
+          "source_url": "https://github.com/langchain-samples/cicd-pipeline-example/blob/main/.github/workflows/preview-deployment.yml",
+          "download_url": "https://raw.githubusercontent.com/langchain-samples/cicd-pipeline-example/main/.github/workflows/preview-deployment.yml",
+          "sha": "c95149152c81fc2bf4144ba8735a67554140aca4",
+          "size_bytes": 4526
+        },
+        {
+          "original_name": "test-with-results.yml",
+          "saved_as": "E_langchain-samples_cicd-pipeline-example_test-with-results.yml",
+          "source_url": "https://github.com/langchain-samples/cicd-pipeline-example/blob/main/.github/workflows/test-with-results.yml",
+          "download_url": "https://raw.githubusercontent.com/langchain-samples/cicd-pipeline-example/main/.github/workflows/test-with-results.yml",
+          "sha": "46e6f67861b5e614df51d35480cd5c8a152be4d2",
+          "size_bytes": 13245
+        }
+      ]
+    },
+    {
+      "owner": "Azure-Samples",
+      "repo": "mlops-enterprise-template",
+      "category": "A",
+      "category_name": "Cloud Provider MLOps Templates",
+      "description": "Azure ML enterprise MLOps template with train/deploy workflows",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/Azure-Samples/mlops-enterprise-template",
+      "commit_sha": "3ab154e9554f4518e210fcef1fd38535cadcfbcc",
+      "stars": 38,
+      "workflows_collected": [
+        {
+          "original_name": "deploy_model.yml",
+          "saved_as": "A_Azure-Samples_mlops-enterprise-template_deploy_model.yml",
+          "source_url": "https://github.com/Azure-Samples/mlops-enterprise-template/blob/main/.github/workflows/deploy_model.yml",
+          "download_url": "https://raw.githubusercontent.com/Azure-Samples/mlops-enterprise-template/main/.github/workflows/deploy_model.yml",
+          "sha": "d248cba4d2448f39ddc13301d5e9ca6bbcec1608",
+          "size_bytes": 2972
+        },
+        {
+          "original_name": "setup.yml",
+          "saved_as": "A_Azure-Samples_mlops-enterprise-template_setup.yml",
+          "source_url": "https://github.com/Azure-Samples/mlops-enterprise-template/blob/main/.github/workflows/setup.yml",
+          "download_url": "https://raw.githubusercontent.com/Azure-Samples/mlops-enterprise-template/main/.github/workflows/setup.yml",
+          "sha": "f037e36a4fd5701f7f3f4e6ec512ffbc3d1adfe9",
+          "size_bytes": 1434
+        },
+        {
+          "original_name": "train_model.yml",
+          "saved_as": "A_Azure-Samples_mlops-enterprise-template_train_model.yml",
+          "source_url": "https://github.com/Azure-Samples/mlops-enterprise-template/blob/main/.github/workflows/train_model.yml",
+          "download_url": "https://raw.githubusercontent.com/Azure-Samples/mlops-enterprise-template/main/.github/workflows/train_model.yml",
+          "sha": "f04923f1b770b251df746fdf1b8fa2f34821125c",
+          "size_bytes": 985
+        }
+      ]
+    },
+    {
+      "owner": "promptfoo",
+      "repo": "promptfoo-action",
+      "category": "E",
+      "category_name": "LLMOps Tools and Examples",
+      "description": "GitHub Action for LLM output testing and evaluation",
+      "workflow_path": ".github/workflows",
+      "github_url": "https://github.com/promptfoo/promptfoo-action",
+      "commit_sha": "54335bc167dd8d3bde83d2cdf624e3abae9ff041",
+      "stars": 53,
+      "workflows_collected": [
+        {
+          "original_name": "check-dist.yml",
+          "saved_as": "E_promptfoo_promptfoo-action_check-dist.yml",
+          "source_url": "https://github.com/promptfoo/promptfoo-action/blob/main/.github/workflows/check-dist.yml",
+          "download_url": "https://raw.githubusercontent.com/promptfoo/promptfoo-action/main/.github/workflows/check-dist.yml",
+          "sha": "03ba4cf2754c225f60049e247c6e7cf44d288c67",
+          "size_bytes": 1549
+        },
+        {
+          "original_name": "codeql-analysis.yml",
+          "saved_as": "E_promptfoo_promptfoo-action_codeql-analysis.yml",
+          "source_url": "https://github.com/promptfoo/promptfoo-action/blob/main/.github/workflows/codeql-analysis.yml",
+          "download_url": "https://raw.githubusercontent.com/promptfoo/promptfoo-action/main/.github/workflows/codeql-analysis.yml",
+          "sha": "68b9ed47bacc2d246d298eba4e96c2c273c0350f",
+          "size_bytes": 2417
+        },
+        {
+          "original_name": "dependabot-post-update.yml",
+          "saved_as": "E_promptfoo_promptfoo-action_dependabot-post-update.yml",
+          "source_url": "https://github.com/promptfoo/promptfoo-action/blob/main/.github/workflows/dependabot-post-update.yml",
+          "download_url": "https://raw.githubusercontent.com/promptfoo/promptfoo-action/main/.github/workflows/dependabot-post-update.yml",
+          "sha": "535c87f4649956e8b55f508c10e283869ec990db",
+          "size_bytes": 1566
+        },
+        {
+          "original_name": "release-please.yml",
+          "saved_as": "E_promptfoo_promptfoo-action_release-please.yml",
+          "source_url": "https://github.com/promptfoo/promptfoo-action/blob/main/.github/workflows/release-please.yml",
+          "download_url": "https://raw.githubusercontent.com/promptfoo/promptfoo-action/main/.github/workflows/release-please.yml",
+          "sha": "212605e5edfbeb2806a1dcbf35a64b90972aab1e",
+          "size_bytes": 1322
+        },
+        {
+          "original_name": "test.yml",
+          "saved_as": "E_promptfoo_promptfoo-action_test.yml",
+          "source_url": "https://github.com/promptfoo/promptfoo-action/blob/main/.github/workflows/test.yml",
+          "download_url": "https://raw.githubusercontent.com/promptfoo/promptfoo-action/main/.github/workflows/test.yml",
+          "sha": "f17d577d8ecee5a0bd72ab050f28881c162aa5cf",
+          "size_bytes": 1222
+        }
+      ]
+    }
+  ]
+}

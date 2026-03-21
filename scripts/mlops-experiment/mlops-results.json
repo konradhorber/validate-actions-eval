@@ -1,0 +1,1218 @@
+{
+  "total_workflows": 84,
+  "by_status": {
+    "FAIL": 17,
+    "WARN": 60,
+    "PASS": 7
+  },
+  "by_category": {
+    "E": {
+      "name": "LLMOps Tools",
+      "total": 8,
+      "pass": 3,
+      "warn": 4,
+      "fail": 1,
+      "exception": 0,
+      "errors": 3,
+      "warnings": 66
+    },
+    "A": {
+      "name": "Cloud Provider Templates",
+      "total": 9,
+      "pass": 0,
+      "warn": 4,
+      "fail": 5,
+      "exception": 0,
+      "errors": 37,
+      "warnings": 16
+    },
+    "C": {
+      "name": "Data/Model Quality Tools",
+      "total": 5,
+      "pass": 0,
+      "warn": 3,
+      "fail": 2,
+      "exception": 0,
+      "errors": 4,
+      "warnings": 9
+    },
+    "D": {
+      "name": "Community Templates",
+      "total": 16,
+      "pass": 1,
+      "warn": 12,
+      "fail": 3,
+      "exception": 0,
+      "errors": 15,
+      "warnings": 34
+    },
+    "B": {
+      "name": "ML Framework Examples",
+      "total": 46,
+      "pass": 3,
+      "warn": 37,
+      "fail": 6,
+      "exception": 0,
+      "errors": 12,
+      "warnings": 202
+    }
+  },
+  "by_repo": {
+    "Azure-Samples/mlops-enterprise-template": {
+      "total": 3,
+      "pass": 0,
+      "warn": 2,
+      "fail": 1,
+      "exception": 0
+    },
+    "Azure/mlops-v2-gha-demo": {
+      "total": 4,
+      "pass": 0,
+      "warn": 0,
+      "fail": 4,
+      "exception": 0
+    },
+    "aws-samples/mlops-sagemaker-github-actions": {
+      "total": 2,
+      "pass": 0,
+      "warn": 2,
+      "fail": 0,
+      "exception": 0
+    },
+    "Paulescu/zenml-example": {
+      "total": 2,
+      "pass": 0,
+      "warn": 2,
+      "fail": 0,
+      "exception": 0
+    },
+    "iterative/cml-playground": {
+      "total": 34,
+      "pass": 2,
+      "warn": 28,
+      "fail": 4,
+      "exception": 0
+    },
+    "iterative/cml-runner-base-case": {
+      "total": 1,
+      "pass": 0,
+      "warn": 1,
+      "fail": 0,
+      "exception": 0
+    },
+    "iterative/cml": {
+      "total": 7,
+      "pass": 1,
+      "warn": 4,
+      "fail": 2,
+      "exception": 0
+    },
+    "iterative/setup-cml": {
+      "total": 1,
+      "pass": 0,
+      "warn": 1,
+      "fail": 0,
+      "exception": 0
+    },
+    "zenml-io/zenml-gitflow": {
+      "total": 1,
+      "pass": 0,
+      "warn": 1,
+      "fail": 0,
+      "exception": 0
+    },
+    "evidentlyai/evidently-ci-example": {
+      "total": 2,
+      "pass": 0,
+      "warn": 2,
+      "fail": 0,
+      "exception": 0
+    },
+    "great-expectations/great": {
+      "total": 3,
+      "pass": 0,
+      "warn": 1,
+      "fail": 2,
+      "exception": 0
+    },
+    "GokuMohandas/mlops-course": {
+      "total": 3,
+      "pass": 0,
+      "warn": 1,
+      "fail": 2,
+      "exception": 0
+    },
+    "fmind/mlops-python-package": {
+      "total": 2,
+      "pass": 0,
+      "warn": 2,
+      "fail": 0,
+      "exception": 0
+    },
+    "machine-learning-apps/actions-ml-cicd": {
+      "total": 8,
+      "pass": 1,
+      "warn": 6,
+      "fail": 1,
+      "exception": 0
+    },
+    "mlops-guide/dvc-gitactions": {
+      "total": 3,
+      "pass": 0,
+      "warn": 3,
+      "fail": 0,
+      "exception": 0
+    },
+    "langchain-samples/cicd-pipeline-example": {
+      "total": 3,
+      "pass": 0,
+      "warn": 3,
+      "fail": 0,
+      "exception": 0
+    },
+    "promptfoo/promptfoo-action": {
+      "total": 5,
+      "pass": 3,
+      "warn": 1,
+      "fail": 1,
+      "exception": 0
+    }
+  },
+  "total_errors": 71,
+  "total_warnings": 327,
+  "processing_time": 98.88662505149841,
+  "validation_rate": 79.76190476190477,
+  "problematic_workflows": [
+    {
+      "file": "[A] Azure/mlops-v2-gha-demo/tf-gha-deploy-infra.yml",
+      "category": "A",
+      "errors": 13,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[D] machine-learning-apps/actions-ml-cicd/ml-cicd.yaml",
+      "category": "D",
+      "errors": 9,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[A] Azure/mlops-v2-gha-demo/deploy-model-training-pipeline-classical.yml",
+      "category": "A",
+      "errors": 8,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[A] Azure/mlops-v2-gha-demo/deploy-batch-endpoint-pipeline-classical.yml",
+      "category": "A",
+      "errors": 6,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[A] Azure/mlops-v2-gha-demo/deploy-online-endpoint-pipeline-classical.yml",
+      "category": "A",
+      "errors": 6,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[A] Azure-Samples/mlops-enterprise-template/deploy_model.yml",
+      "category": "A",
+      "errors": 4,
+      "warnings": 2,
+      "status": "FAIL"
+    },
+    {
+      "file": "[B] iterative/cml-playground/cml-1228.yml",
+      "category": "B",
+      "errors": 3,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[B] iterative/cml-playground/setup-dvc-42.yml",
+      "category": "B",
+      "errors": 3,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[B] iterative/cml/test-deploy.yml",
+      "category": "B",
+      "errors": 3,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[C] great-expectations/great/expectations_action_ge.yaml",
+      "category": "C",
+      "errors": 3,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[D] GokuMohandas/mlops-course/serve.yaml",
+      "category": "D",
+      "errors": 3,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[D] GokuMohandas/mlops-course/workloads.yaml",
+      "category": "D",
+      "errors": 3,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[E] promptfoo/promptfoo-action/release-please.yml",
+      "category": "E",
+      "errors": 3,
+      "warnings": 0,
+      "status": "FAIL"
+    },
+    {
+      "file": "[B] iterative/cml-playground/cml-1166.yml",
+      "category": "B",
+      "errors": 1,
+      "warnings": 6,
+      "status": "FAIL"
+    },
+    {
+      "file": "[B] iterative/cml-playground/cml-1225.yml",
+      "category": "B",
+      "errors": 1,
+      "warnings": 6,
+      "status": "FAIL"
+    }
+  ],
+  "detailed_results": [
+    {
+      "file": "A_Azure-Samples_mlops-enterprise-template_deploy_model.yml",
+      "category": "A",
+      "source_repo": "Azure-Samples/mlops-enterprise-template",
+      "workflow_name": "deploy_model.yml",
+      "status": "FAIL",
+      "processing_time": 3.5028889179229736,
+      "error_count": 4,
+      "warning_count": 2,
+      "exit_code": 1
+    },
+    {
+      "file": "A_Azure-Samples_mlops-enterprise-template_setup.yml",
+      "category": "A",
+      "source_repo": "Azure-Samples/mlops-enterprise-template",
+      "workflow_name": "setup.yml",
+      "status": "WARN",
+      "processing_time": 1.6410439014434814,
+      "error_count": 0,
+      "warning_count": 3,
+      "exit_code": 0
+    },
+    {
+      "file": "A_Azure-Samples_mlops-enterprise-template_train_model.yml",
+      "category": "A",
+      "source_repo": "Azure-Samples/mlops-enterprise-template",
+      "workflow_name": "train_model.yml",
+      "status": "WARN",
+      "processing_time": 1.3291501998901367,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "A_Azure_mlops-v2-gha-demo_deploy-batch-endpoint-pipeline-classical.yml",
+      "category": "A",
+      "source_repo": "Azure/mlops-v2-gha-demo",
+      "workflow_name": "deploy-batch-endpoint-pipeline-classical.yml",
+      "status": "FAIL",
+      "processing_time": 0.020292043685913086,
+      "error_count": 6,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "A_Azure_mlops-v2-gha-demo_deploy-model-training-pipeline-classical.yml",
+      "category": "A",
+      "source_repo": "Azure/mlops-v2-gha-demo",
+      "workflow_name": "deploy-model-training-pipeline-classical.yml",
+      "status": "FAIL",
+      "processing_time": 0.014997005462646484,
+      "error_count": 8,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "A_Azure_mlops-v2-gha-demo_deploy-online-endpoint-pipeline-classical.yml",
+      "category": "A",
+      "source_repo": "Azure/mlops-v2-gha-demo",
+      "workflow_name": "deploy-online-endpoint-pipeline-classical.yml",
+      "status": "FAIL",
+      "processing_time": 0.0077130794525146484,
+      "error_count": 6,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "A_Azure_mlops-v2-gha-demo_tf-gha-deploy-infra.yml",
+      "category": "A",
+      "source_repo": "Azure/mlops-v2-gha-demo",
+      "workflow_name": "tf-gha-deploy-infra.yml",
+      "status": "FAIL",
+      "processing_time": 0.015635967254638672,
+      "error_count": 13,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "A_aws-samples_mlops-sagemaker-github-actions_build.yml",
+      "category": "A",
+      "source_repo": "aws-samples/mlops-sagemaker-github-actions",
+      "workflow_name": "build.yml",
+      "status": "WARN",
+      "processing_time": 1.7006988525390625,
+      "error_count": 0,
+      "warning_count": 3,
+      "exit_code": 0
+    },
+    {
+      "file": "A_aws-samples_mlops-sagemaker-github-actions_deploy.yml",
+      "category": "A",
+      "source_repo": "aws-samples/mlops-sagemaker-github-actions",
+      "workflow_name": "deploy.yml",
+      "status": "WARN",
+      "processing_time": 2.147012710571289,
+      "error_count": 0,
+      "warning_count": 7,
+      "exit_code": 0
+    },
+    {
+      "file": "B_Paulescu_zenml-example_production.yaml",
+      "category": "B",
+      "source_repo": "Paulescu/zenml-example",
+      "workflow_name": "production.yaml",
+      "status": "WARN",
+      "processing_time": 2.376842975616455,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_Paulescu_zenml-example_staging.yaml",
+      "category": "B",
+      "source_repo": "Paulescu/zenml-example",
+      "workflow_name": "staging.yaml",
+      "status": "WARN",
+      "processing_time": 3.5415189266204834,
+      "error_count": 0,
+      "warning_count": 6,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_checks-build.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "checks-build.yml",
+      "status": "WARN",
+      "processing_time": 0.5305600166320801,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_checks-lights-aws.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "checks-lights-aws.yml",
+      "status": "WARN",
+      "processing_time": 1.2924909591674805,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_checks-pr.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "checks-pr.yml",
+      "status": "PASS",
+      "processing_time": 0.004659891128540039,
+      "error_count": 0,
+      "warning_count": 0,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_checks-publish.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "checks-publish.yml",
+      "status": "WARN",
+      "processing_time": 0.6393988132476807,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_checks-push.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "checks-push.yml",
+      "status": "PASS",
+      "processing_time": 0.010798215866088867,
+      "error_count": 0,
+      "warning_count": 0,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1049-1.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1049-1.yml",
+      "status": "WARN",
+      "processing_time": 1.5461843013763428,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1049-2.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1049-2.yml",
+      "status": "WARN",
+      "processing_time": 1.0706028938293457,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1049.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1049.yml",
+      "status": "WARN",
+      "processing_time": 1.157560110092163,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1063.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1063.yml",
+      "status": "WARN",
+      "processing_time": 0.7927291393280029,
+      "error_count": 0,
+      "warning_count": 6,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1065.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1065.yml",
+      "status": "WARN",
+      "processing_time": 1.0283808708190918,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1075.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1075.yml",
+      "status": "WARN",
+      "processing_time": 1.751784086227417,
+      "error_count": 0,
+      "warning_count": 7,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1104.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1104.yml",
+      "status": "WARN",
+      "processing_time": 1.207848310470581,
+      "error_count": 0,
+      "warning_count": 5,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1116.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1116.yml",
+      "status": "WARN",
+      "processing_time": 1.2562637329101562,
+      "error_count": 0,
+      "warning_count": 8,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1121.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1121.yml",
+      "status": "WARN",
+      "processing_time": 1.3933088779449463,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1134.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1134.yml",
+      "status": "WARN",
+      "processing_time": 0.7587711811065674,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1164.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1164.yml",
+      "status": "WARN",
+      "processing_time": 1.7695708274841309,
+      "error_count": 0,
+      "warning_count": 7,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1166.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1166.yml",
+      "status": "FAIL",
+      "processing_time": 1.3254821300506592,
+      "error_count": 1,
+      "warning_count": 6,
+      "exit_code": 1
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1173-2.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1173-2.yml",
+      "status": "WARN",
+      "processing_time": 0.9560329914093018,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1173.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1173.yml",
+      "status": "WARN",
+      "processing_time": 0.7611227035522461,
+      "error_count": 0,
+      "warning_count": 6,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1202.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1202.yml",
+      "status": "WARN",
+      "processing_time": 1.0152909755706787,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1225.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1225.yml",
+      "status": "FAIL",
+      "processing_time": 1.1303470134735107,
+      "error_count": 1,
+      "warning_count": 6,
+      "exit_code": 1
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1228.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1228.yml",
+      "status": "FAIL",
+      "processing_time": 0.02225494384765625,
+      "error_count": 3,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1233.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1233.yml",
+      "status": "WARN",
+      "processing_time": 0.6007359027862549,
+      "error_count": 0,
+      "warning_count": 5,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1302-1.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1302-1.yml",
+      "status": "WARN",
+      "processing_time": 1.1078038215637207,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1302-2.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1302-2.yml",
+      "status": "WARN",
+      "processing_time": 1.223963975906372,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-1344.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-1344.yml",
+      "status": "WARN",
+      "processing_time": 0.7929868698120117,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-561.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-561.yml",
+      "status": "WARN",
+      "processing_time": 0.4914250373840332,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-575-2.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-575-2.yml",
+      "status": "WARN",
+      "processing_time": 1.1296207904815674,
+      "error_count": 0,
+      "warning_count": 10,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-575.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-575.yml",
+      "status": "WARN",
+      "processing_time": 1.1965150833129883,
+      "error_count": 0,
+      "warning_count": 12,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_cml-pr.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "cml-pr.yml",
+      "status": "WARN",
+      "processing_time": 0.7522697448730469,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_gcp-auth.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "gcp-auth.yml",
+      "status": "WARN",
+      "processing_time": 1.0897080898284912,
+      "error_count": 0,
+      "warning_count": 11,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_setup-dvc-42.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "setup-dvc-42.yml",
+      "status": "FAIL",
+      "processing_time": 0.00455021858215332,
+      "error_count": 3,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "B_iterative_cml-playground_tpi-621.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "tpi-621.yml",
+      "status": "WARN",
+      "processing_time": 1.6655948162078857,
+      "error_count": 0,
+      "warning_count": 8,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-playground_tpi-670.yml",
+      "category": "B",
+      "source_repo": "iterative/cml-playground",
+      "workflow_name": "tpi-670.yml",
+      "status": "WARN",
+      "processing_time": 1.4663739204406738,
+      "error_count": 0,
+      "warning_count": 14,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml-runner-base-case_cml.yaml",
+      "category": "B",
+      "source_repo": "iterative/cml-runner-base-case",
+      "workflow_name": "cml.yaml",
+      "status": "WARN",
+      "processing_time": 1.3614740371704102,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml_cloud_case_cml.yaml",
+      "category": "B",
+      "source_repo": "iterative/cml",
+      "workflow_name": "cloud_case_cml.yaml",
+      "status": "WARN",
+      "processing_time": 1.060157060623169,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml_codeql-analysis.yml",
+      "category": "B",
+      "source_repo": "iterative/cml",
+      "workflow_name": "codeql-analysis.yml",
+      "status": "WARN",
+      "processing_time": 1.5606727600097656,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml_gitlab.yml",
+      "category": "B",
+      "source_repo": "iterative/cml",
+      "workflow_name": "gitlab.yml",
+      "status": "FAIL",
+      "processing_time": 0.4862499237060547,
+      "error_count": 1,
+      "warning_count": 1,
+      "exit_code": 1
+    },
+    {
+      "file": "B_iterative_cml_images.yml",
+      "category": "B",
+      "source_repo": "iterative/cml",
+      "workflow_name": "images.yml",
+      "status": "WARN",
+      "processing_time": 2.5078468322753906,
+      "error_count": 0,
+      "warning_count": 6,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml_release.yml",
+      "category": "B",
+      "source_repo": "iterative/cml",
+      "workflow_name": "release.yml",
+      "status": "WARN",
+      "processing_time": 0.5619850158691406,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_cml_test-deploy.yml",
+      "category": "B",
+      "source_repo": "iterative/cml",
+      "workflow_name": "test-deploy.yml",
+      "status": "FAIL",
+      "processing_time": 0.018039941787719727,
+      "error_count": 3,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "B_iterative_cml_trigger-external.yml",
+      "category": "B",
+      "source_repo": "iterative/cml",
+      "workflow_name": "trigger-external.yml",
+      "status": "PASS",
+      "processing_time": 0.005604267120361328,
+      "error_count": 0,
+      "warning_count": 0,
+      "exit_code": 0
+    },
+    {
+      "file": "B_iterative_setup-cml_check.yml",
+      "category": "B",
+      "source_repo": "iterative/setup-cml",
+      "workflow_name": "check.yml",
+      "status": "WARN",
+      "processing_time": 1.434023141860962,
+      "error_count": 0,
+      "warning_count": 13,
+      "exit_code": 0
+    },
+    {
+      "file": "B_zenml-io_zenml-gitflow_pipeline_run.yaml",
+      "category": "B",
+      "source_repo": "zenml-io/zenml-gitflow",
+      "workflow_name": "pipeline_run.yaml",
+      "status": "WARN",
+      "processing_time": 1.0914561748504639,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "C_evidentlyai_evidently-ci-example_cloud.yml",
+      "category": "C",
+      "source_repo": "evidentlyai/evidently-ci-example",
+      "workflow_name": "cloud.yml",
+      "status": "WARN",
+      "processing_time": 1.2507119178771973,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "C_evidentlyai_evidently-ci-example_local.yml",
+      "category": "C",
+      "source_repo": "evidentlyai/evidently-ci-example",
+      "workflow_name": "local.yml",
+      "status": "WARN",
+      "processing_time": 1.1472289562225342,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "C_great-expectations_great_expectations_action_ge-pr-comment-demo.yaml",
+      "category": "C",
+      "source_repo": "great-expectations/great",
+      "workflow_name": "expectations_action_ge-pr-comment-demo.yaml",
+      "status": "FAIL",
+      "processing_time": 2.4750378131866455,
+      "error_count": 1,
+      "warning_count": 3,
+      "exit_code": 1
+    },
+    {
+      "file": "C_great-expectations_great_expectations_action_ge-pr-push-demo.yaml",
+      "category": "C",
+      "source_repo": "great-expectations/great",
+      "workflow_name": "expectations_action_ge-pr-push-demo.yaml",
+      "status": "WARN",
+      "processing_time": 1.541186809539795,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "C_great-expectations_great_expectations_action_ge.yaml",
+      "category": "C",
+      "source_repo": "great-expectations/great",
+      "workflow_name": "expectations_action_ge.yaml",
+      "status": "FAIL",
+      "processing_time": 0.01037287712097168,
+      "error_count": 3,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "D_GokuMohandas_mlops-course_documentation.yaml",
+      "category": "D",
+      "source_repo": "GokuMohandas/mlops-course",
+      "workflow_name": "documentation.yaml",
+      "status": "WARN",
+      "processing_time": 0.9017219543457031,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "D_GokuMohandas_mlops-course_serve.yaml",
+      "category": "D",
+      "source_repo": "GokuMohandas/mlops-course",
+      "workflow_name": "serve.yaml",
+      "status": "FAIL",
+      "processing_time": 0.00503087043762207,
+      "error_count": 3,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "D_GokuMohandas_mlops-course_workloads.yaml",
+      "category": "D",
+      "source_repo": "GokuMohandas/mlops-course",
+      "workflow_name": "workloads.yaml",
+      "status": "FAIL",
+      "processing_time": 0.005606174468994141,
+      "error_count": 3,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "D_fmind_mlops-python-package_check.yml",
+      "category": "D",
+      "source_repo": "fmind/mlops-python-package",
+      "workflow_name": "check.yml",
+      "status": "WARN",
+      "processing_time": 1.4502339363098145,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "D_fmind_mlops-python-package_publish.yml",
+      "category": "D",
+      "source_repo": "fmind/mlops-python-package",
+      "workflow_name": "publish.yml",
+      "status": "WARN",
+      "processing_time": 3.0346319675445557,
+      "error_count": 0,
+      "warning_count": 11,
+      "exit_code": 0
+    },
+    {
+      "file": "D_machine-learning-apps_actions-ml-cicd_chatops.yaml",
+      "category": "D",
+      "source_repo": "machine-learning-apps/actions-ml-cicd",
+      "workflow_name": "chatops.yaml",
+      "status": "PASS",
+      "processing_time": 1.6781251430511475,
+      "error_count": 0,
+      "warning_count": 0,
+      "exit_code": 0
+    },
+    {
+      "file": "D_machine-learning-apps_actions-ml-cicd_copy_to_pages.yaml",
+      "category": "D",
+      "source_repo": "machine-learning-apps/actions-ml-cicd",
+      "workflow_name": "copy_to_pages.yaml",
+      "status": "WARN",
+      "processing_time": 2.528141975402832,
+      "error_count": 0,
+      "warning_count": 4,
+      "exit_code": 0
+    },
+    {
+      "file": "D_machine-learning-apps_actions-ml-cicd_deploy.yaml",
+      "category": "D",
+      "source_repo": "machine-learning-apps/actions-ml-cicd",
+      "workflow_name": "deploy.yaml",
+      "status": "WARN",
+      "processing_time": 1.4137370586395264,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "D_machine-learning-apps_actions-ml-cicd_ml-cicd.yaml",
+      "category": "D",
+      "source_repo": "machine-learning-apps/actions-ml-cicd",
+      "workflow_name": "ml-cicd.yaml",
+      "status": "FAIL",
+      "processing_time": 1.1509451866149902,
+      "error_count": 9,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "D_machine-learning-apps_actions-ml-cicd_nb2docs.yaml",
+      "category": "D",
+      "source_repo": "machine-learning-apps/actions-ml-cicd",
+      "workflow_name": "nb2docs.yaml",
+      "status": "WARN",
+      "processing_time": 2.2622830867767334,
+      "error_count": 0,
+      "warning_count": 5,
+      "exit_code": 0
+    },
+    {
+      "file": "D_machine-learning-apps_actions-ml-cicd_repo-dispatch.yaml",
+      "category": "D",
+      "source_repo": "machine-learning-apps/actions-ml-cicd",
+      "workflow_name": "repo-dispatch.yaml",
+      "status": "WARN",
+      "processing_time": 1.2225711345672607,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "D_machine-learning-apps_actions-ml-cicd_see-payload.yaml",
+      "category": "D",
+      "source_repo": "machine-learning-apps/actions-ml-cicd",
+      "workflow_name": "see-payload.yaml",
+      "status": "WARN",
+      "processing_time": 0.4594912528991699,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "D_machine-learning-apps_actions-ml-cicd_see_token.yaml",
+      "category": "D",
+      "source_repo": "machine-learning-apps/actions-ml-cicd",
+      "workflow_name": "see_token.yaml",
+      "status": "WARN",
+      "processing_time": 0.4860677719116211,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "D_mlops-guide_dvc-gitactions_deploy_on_release.yaml",
+      "category": "D",
+      "source_repo": "mlops-guide/dvc-gitactions",
+      "workflow_name": "deploy_on_release.yaml",
+      "status": "WARN",
+      "processing_time": 0.5282611846923828,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "D_mlops-guide_dvc-gitactions_test_on_push.yaml",
+      "category": "D",
+      "source_repo": "mlops-guide/dvc-gitactions",
+      "workflow_name": "test_on_push.yaml",
+      "status": "WARN",
+      "processing_time": 0.7938239574432373,
+      "error_count": 0,
+      "warning_count": 2,
+      "exit_code": 0
+    },
+    {
+      "file": "D_mlops-guide_dvc-gitactions_train_evaluate.yaml",
+      "category": "D",
+      "source_repo": "mlops-guide/dvc-gitactions",
+      "workflow_name": "train_evaluate.yaml",
+      "status": "WARN",
+      "processing_time": 0.5980048179626465,
+      "error_count": 0,
+      "warning_count": 1,
+      "exit_code": 0
+    },
+    {
+      "file": "E_langchain-samples_cicd-pipeline-example_new-lgp-revision.yml",
+      "category": "E",
+      "source_repo": "langchain-samples/cicd-pipeline-example",
+      "workflow_name": "new-lgp-revision.yml",
+      "status": "WARN",
+      "processing_time": 3.9304120540618896,
+      "error_count": 0,
+      "warning_count": 14,
+      "exit_code": 0
+    },
+    {
+      "file": "E_langchain-samples_cicd-pipeline-example_preview-deployment.yml",
+      "category": "E",
+      "source_repo": "langchain-samples/cicd-pipeline-example",
+      "workflow_name": "preview-deployment.yml",
+      "status": "WARN",
+      "processing_time": 2.541506052017212,
+      "error_count": 0,
+      "warning_count": 8,
+      "exit_code": 0
+    },
+    {
+      "file": "E_langchain-samples_cicd-pipeline-example_test-with-results.yml",
+      "category": "E",
+      "source_repo": "langchain-samples/cicd-pipeline-example",
+      "workflow_name": "test-with-results.yml",
+      "status": "WARN",
+      "processing_time": 2.7612528800964355,
+      "error_count": 0,
+      "warning_count": 41,
+      "exit_code": 0
+    },
+    {
+      "file": "E_promptfoo_promptfoo-action_check-dist.yml",
+      "category": "E",
+      "source_repo": "promptfoo/promptfoo-action",
+      "workflow_name": "check-dist.yml",
+      "status": "PASS",
+      "processing_time": 1.7306361198425293,
+      "error_count": 0,
+      "warning_count": 0,
+      "exit_code": 0
+    },
+    {
+      "file": "E_promptfoo_promptfoo-action_codeql-analysis.yml",
+      "category": "E",
+      "source_repo": "promptfoo/promptfoo-action",
+      "workflow_name": "codeql-analysis.yml",
+      "status": "PASS",
+      "processing_time": 1.4398210048675537,
+      "error_count": 0,
+      "warning_count": 0,
+      "exit_code": 0
+    },
+    {
+      "file": "E_promptfoo_promptfoo-action_dependabot-post-update.yml",
+      "category": "E",
+      "source_repo": "promptfoo/promptfoo-action",
+      "workflow_name": "dependabot-post-update.yml",
+      "status": "PASS",
+      "processing_time": 0.7599430084228516,
+      "error_count": 0,
+      "warning_count": 0,
+      "exit_code": 0
+    },
+    {
+      "file": "E_promptfoo_promptfoo-action_release-please.yml",
+      "category": "E",
+      "source_repo": "promptfoo/promptfoo-action",
+      "workflow_name": "release-please.yml",
+      "status": "FAIL",
+      "processing_time": 0.027540922164916992,
+      "error_count": 3,
+      "warning_count": 0,
+      "exit_code": 1
+    },
+    {
+      "file": "E_promptfoo_promptfoo-action_test.yml",
+      "category": "E",
+      "source_repo": "promptfoo/promptfoo-action",
+      "workflow_name": "test.yml",
+      "status": "WARN",
+      "processing_time": 1.4240021705627441,
+      "error_count": 0,
+      "warning_count": 3,
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+name: Test CML PR usage
+on:
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+jobs:
+  basic-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || __CML_DEFAULT_BRANCH__ }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - name: Modifiy file for PR
+        run: |
+          echo "$(date +%s%N) - pr basic" >> cml.log
+      - name: CML PR
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cml pr .
+      - name: Modifiy file for PR
+        run: |
+          echo "$(date +%s%N) - pr basic" >> cml.log
+      - name: CML PR
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cml pr .
+  user-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || __CML_DEFAULT_BRANCH__ }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - name: Modifiy file for PR
+        run: |
+          echo "$(date +%s%N) - pr user" >> cml.log
+      - name: CML PR
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cml pr --user-email=dabarnes2b@gmail.com --user-name=dacbd .

@@ -1,0 +1,36 @@
+name: cml#1202 CML Comment on issue
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'branch to test'
+        required: false
+        type: string
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Using CML Branch d003-issue-comments
+        id: cml-setup
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#d003-issue-comments
+      - uses: dacbd/create-issue-action@v1
+        id: create-issue
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Test for `cml comment create`
+      - run: |
+          echo "cml comment create --issue test" > report.md
+          cml comment create --issue ${{ steps.create-issue.outputs.number }} ./report.md
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          gh issue view ${{ steps.create-issue.outputs.number }} --comments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: clean-up
+        if: always()
+        run: gh issue close ${{ steps.create-issue.outputs.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

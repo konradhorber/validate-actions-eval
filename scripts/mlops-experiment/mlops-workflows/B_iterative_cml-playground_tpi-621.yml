@@ -1,0 +1,93 @@
+name: tpi#621 APT install lock
+on:
+  schedule:
+    - cron: '45 14 * * 1' # Mondays 1445 UTC
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'branch to test'
+        required: false
+        type: string
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+jobs:
+  aws:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || 'master' }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
+          aws-region: us-west-1
+      - name: Create Runner
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          cml runner --labels=aws-test --cloud=aws --cloud-region=us-west --cloud-type=t3.small
+  test-aws:
+    needs: [aws]
+    runs-on: [self-hosted, aws-test]
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check an APT install
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y glances
+          glances --version
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version
+  gcp:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test a CML Branch
+        id: cml-setup
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install -g canvas@2 vega@5 vega-cli@5 vega-lite@5 github:iterative/cml#${{ inputs.branch || 'master' }}
+      - name: Standard CML setup
+        if: ${{ steps.cml-setup.outcome != 'success' }}
+        uses: iterative/setup-cml@v1
+        with:
+          version: latest
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: ${{ secrets.GCP_CML_RUNNER_KEY }}
+      - name: Create Runner
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          cml runner --single --labels=gcp-test --cloud=gcp --cloud-region=us-west --cloud-type=e2-highcpu-2
+  test-gcp:
+    needs: [gcp]
+    runs-on: [self-hosted, gcp-test]
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check an APT install
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y glances
+          glances --version
+      - name: CML Version Test
+        run: |
+          which cml
+          cml --version
