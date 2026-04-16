@@ -1,0 +1,52 @@
+name: Receive CML Publish Event
+on:
+  repository_dispatch:
+    types:
+      - new-cml
+jobs:
+  debug:
+    needs: nonexistent-seed-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Received Publish event
+        run: |
+          echo "${{ github.event.client_playload.tag }}"
+  is-published:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        distribution: [binary, container, package, action]
+        include:
+          - distribution: binary
+            version: "curl --location https://github.com/iterative/cml/releases/latest/download/cml-linux-x64 --output cml && chmod a+x cml && ./cml --version"
+          - distribution: container
+            version: docker run --interactive ghcr.io/iterative/cml --version
+          - distribution: package
+            version: npx --yes @dvcorg/cml --version
+          - distribution: action
+            version: cml --version
+    steps:
+      - name: Setup CML
+        if: matrix.distribution == 'action'
+        uses: iterative/setup-cml@v1
+      - name: Check release artifacts
+        run: |
+          version="v$(${{ matrix.version }})"
+          if [[ "$version" != "$EXPECTED" ]]; then
+            echo "${{ matrix.distribution }} version mismatch: expected $EXPECTED, got $version"
+            exit 1
+          fi
+          echo "Success, got $version expected $EXPECTED"
+        env:
+          EXPECTED: ${{ github.event.client_payload.tag }}
+  publish-failure:
+    needs: is-published
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Release of <https://github.com/iterative/cml|iterative/cml> <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|*failed*>!" |
+          jq --raw-input {text:.} | curl --header content-type:application/json --data @- "$SLACK_WEBHOOK"
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

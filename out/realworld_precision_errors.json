@@ -1,0 +1,80 @@
+{
+  "per_tool": {
+    "actionlint": {
+      "TP": 99,
+      "FP": 12,
+      "AMBIG": 0,
+      "INFRA": 0,
+      "precision_excl_ambig_infra": 0.8918918918918919,
+      "total_findings": 111
+    },
+    "validate-actions": {
+      "TP": 15,
+      "FP": 29,
+      "AMBIG": 0,
+      "INFRA": 0,
+      "precision_excl_ambig_infra": 0.3409090909090909,
+      "total_findings": 44
+    }
+  },
+  "per_tool_layer": {
+    "actionlint": {
+      "registry": {
+        "TP": 88,
+        "FP": 0,
+        "AMBIG": 0,
+        "INFRA": 0,
+        "precision_excl_ambig_infra": 1.0
+      },
+      "execution": {
+        "TP": 10,
+        "FP": 0,
+        "AMBIG": 0,
+        "INFRA": 0,
+        "precision_excl_ambig_infra": 1.0
+      },
+      "schema": {
+        "TP": 0,
+        "FP": 12,
+        "AMBIG": 0,
+        "INFRA": 0,
+        "precision_excl_ambig_infra": 0.0
+      },
+      "syntax": {
+        "TP": 1,
+        "FP": 0,
+        "AMBIG": 0,
+        "INFRA": 0,
+        "precision_excl_ambig_infra": 1.0
+      }
+    },
+    "validate-actions": {
+      "execution": {
+        "TP": 1,
+        "FP": 23,
+        "AMBIG": 0,
+        "INFRA": 0,
+        "precision_excl_ambig_infra": 0.041666666666666664
+      },
+      "syntax": {
+        "TP": 7,
+        "FP": 6,
+        "AMBIG": 0,
+        "INFRA": 0,
+        "precision_excl_ambig_infra": 0.5384615384615384
+      },
+      "registry": {
+        "TP": 7,
+        "FP": 0,
+        "AMBIG": 0,
+        "INFRA": 0,
+        "precision_excl_ambig_infra": 1.0
+      }
+    }
+  },
+  "notes": {
+    "INFRA_excluded": "marketplace fetch warnings excluded from P/R \u2014 they reflect missing GH_TOKEN rather than validation quality",
+    "AMBIG_excluded": "AMBIG findings excluded from precision (should be 0 after promotion).",
+    "layer_assignment": "layer is rule-based heuristic; see collect_findings.layer_of_rule"
+  }
+}

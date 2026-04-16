@@ -1,0 +1,51 @@
+name: Check the lights in AWS
+on:
+  schedule:
+    - cron: '45 23 * * *'
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  issues: write
+jobs:
+  check-lights:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
+          aws-region: us-east-1
+      - name: Check the lights
+        id: lights
+        run: |
+          now=$(date +%s)
+          regions=$(aws ec2 --region us-east-1 describe-regions | jq .Regions[].RegionName | tr -d \")
+          for region in $regions; do
+              result=$(aws ec2 describe-instances --filters Name=tag:Name,Values=cml*,tpi*,iterative* --region "$region" | jq -c '.Reservations[].Instances[] | select(.State.Name == "running") | { id: .InstanceId, start: .LaunchTime }')
+              if [[ -n "$result" ]]; then
+                  echo "### Found instances in region $region" >> report.md
+                  for json in $result; do
+                      id=$(echo "$json" | jq '.id' | tr -d \")
+                      time=$(echo "$json" | jq '.start' | tr -d \")
+                      launch_time=$(date -d "$time" +%s)
+                      echo "Instance [$id](https://console.aws.amazon.com/ec2/v2/home?region=$region#InstanceDetails:instanceId=$id) on for $(date -u -d "0 $now seconds - $launch_time seconds" +"%Hh %Mm %Ss")" >> report.md
+                  done
+              fi
+          done
+          if [[ -e ./report.md ]]; then
+            report=$(cat ./report.md)
+            delim="$(openssl rand -hex 8)"
+            echo "report<<${delim}" >> $GITHUB_OUTPUT
+            echo "${report}" >> $GITHUB_OUTPUT
+            echo "${delim}" >> $GITHUB_OUTPUT
+          fi
+      - name: Send Notification
+        if: ${{ steps.lights.outputs.report }}
+        uses: dacbd/create-issue-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Someone left the lights on
+          body: ${{ steps.lights.outputs.report }}
+          assignees: dacbd

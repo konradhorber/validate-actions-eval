@@ -1,0 +1,86 @@
+{
+  "per_tool": {
+    "validate-actions": {
+      "n_files": 114,
+      "n_crashes": 0,
+      "n_files_flagged_any": 110,
+      "n_files_flagged_error": 110,
+      "total_findings": 157,
+      "total_errors": 157,
+      "total_warnings": 0,
+      "runtime_s": {
+        "mean": 1.3031696980526504,
+        "median": 0.7452109374999054,
+        "p95": 4.0205003419999175,
+        "max": 16.379677249999986,
+        "total": 148.56134557800215
+      },
+      "recall": {
+        "overall": 0.9473684210526315,
+        "by_layer": {
+          "execution": {
+            "hits": 19,
+            "total": 19,
+            "recall": 1.0
+          },
+          "registry": {
+            "hits": 30,
+            "total": 35,
+            "recall": 0.8571428571428571
+          },
+          "schema": {
+            "hits": 19,
+            "total": 20,
+            "recall": 0.95
+          },
+          "syntax": {
+            "hits": 40,
+            "total": 40,
+            "recall": 1.0
+          }
+        }
+      }
+    },
+    "actionlint": {
+      "n_files": 114,
+      "n_crashes": 0,
+      "n_files_flagged_any": 96,
+      "n_files_flagged_error": 96,
+      "total_findings": 96,
+      "total_errors": 96,
+      "total_warnings": 0,
+      "runtime_s": {
+        "mean": 0.009121658254395714,
+        "median": 0.009286021000207256,
+        "p95": 0.013983481249579198,
+        "max": 0.016523875000530097,
+        "total": 1.0398690410011113
+      },
+      "recall": {
+        "overall": 0.8245614035087719,
+        "by_layer": {
+          "execution": {
+            "hits": 19,
+            "total": 19,
+            "recall": 1.0
+          },
+          "registry": {
+            "hits": 15,
+            "total": 35,
+            "recall": 0.42857142857142855
+          },
+          "schema": {
+            "hits": 20,
+            "total": 20,
+            "recall": 1.0
+          },
+          "syntax": {
+            "hits": 40,
+            "total": 40,
+            "recall": 1.0
+          }
+        }
+      }
+    }
+  }
+}

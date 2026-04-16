@@ -1,0 +1,15 @@
+name: Lock closed issue
+
+on: 
+  issues:
+
+		badly_indented_with_tabs: 1
+    types: [closed]
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: OSDKDev/lock-issues@v1.1
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"

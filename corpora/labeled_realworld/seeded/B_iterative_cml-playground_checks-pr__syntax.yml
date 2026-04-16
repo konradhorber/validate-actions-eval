@@ -1,0 +1,14 @@
+name: Receive CML PR Event
+on:
+  repository_dispatch:
+
+		badly_indented_with_tabs: 1
+    types:
+      - pr
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: TODO
+        run: |
+          echo "${{ github.event.client_payload.branch }}"
